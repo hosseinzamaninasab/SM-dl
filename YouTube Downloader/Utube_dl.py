@@ -13,6 +13,7 @@ utube_url = input('Insert link: ')
 # Selenium
 website_url = 'https://qdownloader.io/'
 driver = webdriver.Chrome()  # Download and install chrome webdriver from official site(https://chromedriver.chromium.org/downloads)
+driver.set_window_position(-106000, 0)  # Hide windows from our sight
 driver.get(website_url)
 url = driver.find_element_by_class_name('url-input')  # Find the box to insert utube_url
 url.send_keys(utube_url)
@@ -53,3 +54,4 @@ for links in soup.select('td > a'):  # Grab only target link
     num += 1
     print('----------------------------------------------------------------------------------------------------------'
           '--------------------------------------------')
+driver.close()
