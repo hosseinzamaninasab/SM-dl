@@ -12,7 +12,7 @@ utube_url = input('Insert link: ')
 # Phase 1
 # Selenium
 website_url = 'https://qdownloader.io/'
-driver = webdriver.Chrome()
+driver = webdriver.Chrome()  # Download and install chrome webdriver from official site(https://chromedriver.chromium.org/downloads)
 driver.get(website_url)
 url = driver.find_element_by_class_name('url-input')  # Find the box to insert utube_url
 url.send_keys(utube_url)
